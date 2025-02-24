@@ -4,6 +4,8 @@ using Teste_Hexagon.Context;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+//builder = WebApplication.CreateBuilder(args);
+//builder.Services.AddDbContext<Teste_HexagonContext>(options => options.UserInMemoryDatabase("PessoaDb"));
 builder.Services.AddDbContext<Teste_HexagonContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ConexaoPadrão")));
 
 builder.Services.AddControllers();
